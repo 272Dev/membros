@@ -1,13 +1,14 @@
 import discord
 import threading
 import base64
+import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 
 # ---- config ----
 _t = base64.b64decode("TVRRNU9Ea3dOalV4TlRNeE56TXlOVGswTlEuRzlVUm5FLmpnblZkNF9zQmZnNjRwZDdMV2d2ek9yT3hvVmZDc19lQTBoR0p3").decode()
 GUILD_ID = 1444145999349153865
-PORT = 5000
+PORT = int(os.environ.get("PORT", 5000))
 # ----------------
 
 intents = discord.Intents.default()
